@@ -16,6 +16,14 @@ const cockpit = props => {
     }
   }, []);
 
+  useEffect(() => {
+    console.log('Cockpit.js useEffect 2nd hook, it will run when the component is rendered to the page and with every update it will run but, after the following function');
+
+    return () => {
+      console.log('Cockpit.js useEffect 2nd, with every update, it will trigger');
+    }
+  }); // no arguments are passed here
+
   console.log('Cockpit.js component');
   const assignedClasses = [];
   let btnClass = '';
