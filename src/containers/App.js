@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import './App.css';
-
 import Persons from '../components/persons/Persons';
 import Cockpit from '../components/cockpit/Cockpit';
 // import ErrorBoundary from '../ErrorBoundary/ErrorBoundary';
+import WithClass from '../components/hoc/WithClass';
 
 class App extends Component {
   constructor(props) {
@@ -87,7 +87,7 @@ class App extends Component {
     }
 
     return (
-      <div className="app">
+      <WithClass>
         <button onClick={() => {this.setState({ showCockpit: false })}}>Remove Cockpit</button>
           {this.state.showCockpit? <Cockpit
             appTitle={this.props.appTitle}
@@ -96,7 +96,7 @@ class App extends Component {
             clicked={this.togglePersonsHandler}
           /> : null }
           {persons}
-      </div>
+      </WithClass>
     );
   }
 }
