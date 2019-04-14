@@ -5,6 +5,6 @@ import './index.css';
 import App from './containers/App';
 
 ReactDOM.render(
-  <App />,
+  <App appTitle="Person Manager"/>,
   document.querySelector('#root')
 );
